@@ -99,7 +99,7 @@ bool HashTable::Initialize(const unsigned max_table_entries,
     }
 
     num_hash_functions_ = num_functions;
-    table_size_ = unsigned(ceil(max_table_entries * space_usage));
+    table_size_ = unsigned(floor(max_table_entries * space_usage) + 1);
 
     // Allocate memory.
     const unsigned slots_to_allocate = table_size_ + kStashSize;
