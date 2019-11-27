@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 
 option(SPCONV_BuildTests "Build the unit tests when BUILD_TESTING is enabled." ON)
 option(SPCONV_BuildCUDA "Build cuda code when BUILD_TESTING is enabled." ON)
+set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
 if (SPCONV_BuildCUDA)
     project(SparseConv LANGUAGES CXX CUDA VERSION 1.1)
 else()
